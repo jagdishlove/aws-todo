@@ -1,0 +1,14 @@
+service: aws-todo-react-app
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  app:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: api/todos
+          method: get
